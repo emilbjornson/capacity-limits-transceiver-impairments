@@ -7,7 +7,7 @@
 %
 %The paper is available for free download: http://arxiv.org/pdf/1209.4093
 %
-%This is version 1.0.
+%This is version 1.0 (Last edited: 2014-03-22)
 %
 %License: If you use parts of this code in your research, please cite the
 %paper above in your resulting research publications.

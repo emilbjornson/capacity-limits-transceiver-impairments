@@ -7,7 +7,7 @@ function powerAllocation = functionWaterfilling(totalPower,lambdaInv)
 %Impairments," IEEE Communications Letters, vol. 17, no. 1, pp. 91-94,
 %January 2013.
 %
-%This is version 1.0.
+%This is version 1.0. (Last edited: 2014-03-22)
 %
 %INPUT:
 %totalPower = Total transmit power to be allocated over the singular 
@@ -19,8 +19,8 @@ function powerAllocation = functionWaterfilling(totalPower,lambdaInv)
 %OUTPUT:
 %powerAllocation = Power allocation computed using classical waterfilling
 
-Nt = length(lambdaInv); %Extact number of singular directions
-lambdaInvSorted = sort(lambdaInv,'ascend'); %Sort lambdaInve in ascending order
+Nt = length(lambdaInv); %Extract number of singular directions
+lambdaInvSorted = sort(lambdaInv,'ascend'); %Sort lambdaInv in ascending order
 
 alpha_candidates = (totalPower+cumsum(lambdaInvSorted))./(1:Nt)'; %Compute different values on the Lagrange multiplier (i.e., waterlevel) given that 1,2,...,Nt of the singular directions get non-zero power
 optimalIndex = alpha_candidates-lambdaInvSorted(1:end,1)>0 & alpha_candidates-[lambdaInvSorted(2:end,1); Inf]<0; %Find the true Lagrange multiplier alpha by checking which one of the candidates that only turns on the singular directions that are supposed to be on
